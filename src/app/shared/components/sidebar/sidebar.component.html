@@ -1,15 +1,14 @@
-<div class="border-right  p-3" id="sidebar">
-  <h3>Gif App</h3>
-  <hr class="text-dark">
-  <div class="list-group list-reset">
+<aside id="sidebar">
+  <div class="brand-mark">Gif-App</div>
+  <p>Historial de busquedas</p>
 
-
-      <button *ngFor="let gif of tagHistory"
-
-        class="d-flex justify-content-between align-items-center list-group-item list-group-item-action list-group-item-dark" (click)="selectedGif(gif)">
-          {{gif | uppercase}}<button class="btn btn-outline-danger btn-sm" (click)="deleteSearch(gif)">X</button>
-        </button>
-
+  <div class="history-list">
+    <div *ngFor="let gif of tagHistory" class="history-item">
+      <button type="button" class="history-tag" (click)="selectedGif(gif)">
+        {{ gif | uppercase }}
+      </button>
+      <button type="button" class="delete-tag" aria-label="Eliminar busqueda" (click)="deleteSearch(gif)">X</button>
+    </div>
   </div>
-</div>
+</aside>
 

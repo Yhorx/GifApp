@@ -1,16 +1,13 @@
-<div class="row p-3">
+<main class="home-page">
+  <section class="hero-panel">
+    <p class="eyebrow">Explora GIFs al instante</p>
+    <h1>Encuentra el GIF perfecto para cada momento</h1>
+    <p class="hero-copy">Busca, guarda tu historial y vuelve rapido a tus temas favoritos.</p>
 
-  <div class="col-12">
-    <!-- Busqueda -->
     <gifs-search-box></gifs-search-box>
-  </div>
+  </section>
 
-  <div class="col-12 pt-2">
-    <!-- Listado de Gifs -->
+  <section class="results-panel">
     <gifs-card-list [gifList]="gifs"  ></gifs-card-list>
-  </div>
-
-
-
-
-</div>
+  </section>
+</main>

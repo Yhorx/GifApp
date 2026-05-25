@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Gif, SearchResponse } from '../interfaces/gifs.interfaces';
+import { environment } from '../../../environments/environment';
+
 
 @Injectable({ providedIn: 'root' })
-
-
 
 export class GifsService {
 
   public gifsList: Gif[] = []
 
   private _tagsHistory: string[] = []
-  private apiKey: string = 't5Ch4A4i45eqnF286I0MpIl5HL8WFjYj'
+  private apiKey: string = environment.giphyApiKey
   private httpUrl: string = 'http://api.giphy.com/v1/gifs/'
 
   constructor(private http: HttpClient) {
@@ -20,12 +20,9 @@ export class GifsService {
     console.log('Gifs Save');
   }
 
-
   get tagsHistory(): string[] {
     return [...this._tagsHistory]
   }
-
-
 
   private organizedTag(tag: string) {
     tag = tag.toLowerCase()
@@ -38,11 +35,6 @@ export class GifsService {
 
     this.saveLocalStorage()
   }
-
-
-
-
-
 
   private saveLocalStorage(): void {
     localStorage.setItem('history', JSON.stringify(this._tagsHistory))
@@ -64,10 +56,7 @@ export class GifsService {
 
   public searchTag(tag: string): void {
     if (tag.length === 0) { return }
-
-
     this.organizedTag(tag)
-
     const params = new HttpParams()
       .set('api_key', this.apiKey)
       .set('limit', 10)

@@ -1,11 +1,32 @@
-
-.card{
-  display: block;
-  outline: 2 px solid #fff;
-  height: auto;
-  margin: 10px;
-  width: 320px;
+.gif-card {
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.84);
+  box-shadow: 0 18px 44px rgba(2, 6, 23, 0.22);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
-.card-body{
+
+.gif-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(103, 232, 249, 0.45);
+  box-shadow: 0 24px 54px rgba(2, 6, 23, 0.32);
+}
+
+.card-body {
+  padding: 14px 16px 16px;
   color: #fff;
+}
+
+.card-text {
+  display: -webkit-box;
+  min-height: 3rem;
+  margin: 0;
+  overflow: hidden;
+  color: #e2e8f0;
+  font-weight: 650;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }

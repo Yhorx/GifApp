@@ -1,6 +1,37 @@
-
-.col{
+.gif-grid {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
 
+.empty-state {
+  display: grid;
+  min-height: 280px;
+  place-items: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.empty-icon {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  margin: 0 0 18px;
+  place-items: center;
+  border-radius: 24px;
+  background: rgba(103, 232, 249, 0.12);
+  color: #67e8f9;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+p {
+  margin: 0;
 }

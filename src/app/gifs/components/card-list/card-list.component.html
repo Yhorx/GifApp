@@ -1,14 +1,11 @@
-<div *ngIf="gifList.length-1 >= 1;else none">
-<div class="col">
-
-  <app-gifs-card *ngFor="let gif of gifList" [gif]="gif" class="col-md-3 col-sm-6">
-  </app-gifs-card>
+<div *ngIf="gifList.length > 0; else none" class="gif-grid">
+  <app-gifs-card *ngFor="let gif of gifList" [gif]="gif"></app-gifs-card>
 </div>
-</div>
-
 
 <ng-template #none>
-  <h1>Not Found</h1>
+  <div class="empty-state">
+    <p class="empty-icon">GIF</p>
+    <h2>No hay resultados todavia</h2>
+    <p>Prueba buscando una palabra clave para llenar esta galeria.</p>
+  </div>
 </ng-template>
-
-
